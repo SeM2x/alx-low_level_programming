@@ -10,7 +10,9 @@
 
 int main(void)
 {
-	char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *message =
+	"and that piece of art is useful\" - Dora Korpar,2015-10-19\n";
+
 	ssize_t bytes_written;
 
 	bytes_written = write(STDOUT_FILENO, message, strlen(message));
