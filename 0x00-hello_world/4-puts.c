@@ -2,7 +2,8 @@
 
 /**
  * main - prints using puts
- * returns 0
+ *
+ * Return: 0 if exited, none-zero otherwise
  */
 
 int main(void)
