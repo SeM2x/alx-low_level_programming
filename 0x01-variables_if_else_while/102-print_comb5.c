@@ -21,7 +21,7 @@ int main(void)
 					l = j + 1;
 				else
 					l = 48;
-				for (l; l < 58; l++)
+				for (; l < 58; l++)
 				{
 					putchar(i);
 					putchar(j);
