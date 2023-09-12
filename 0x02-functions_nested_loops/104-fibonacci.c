@@ -18,7 +18,7 @@ char *addStrings(char *num1, char *num2)
 	int carry = 0;
 	char *result = (char *) malloc((maxlen + 2) * sizeof(char));
 	int resultIndex = 0;
-	int i, j;
+	int i, j, left, right;
 
 	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry; i--, j--)
 	{
@@ -33,9 +33,6 @@ char *addStrings(char *num1, char *num2)
 	}
 
 	result[resultIndex] = '\0';
-
-	int left, right;
-
 	left = 0;
 	right = resultIndex - 1;
 
