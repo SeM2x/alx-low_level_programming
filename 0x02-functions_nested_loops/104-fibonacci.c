@@ -14,7 +14,7 @@ int main(void)
 	count = 0;
 	i = 1;
 	j = 2;
-	while (count < 99)
+	while (count < 97)
 	{
 		printf("%.0Lf, ", i);
 		x = i;
