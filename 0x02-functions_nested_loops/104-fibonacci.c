@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	unsigned long int i, j, x;
+	long double i, j, x;
 	int count;
 
 	count = 0;
@@ -16,12 +16,12 @@ int main(void)
 	j = 2;
 	while (count < 99)
 	{
-		printf("%lu, ", i);
+		printf("%.0Lf, ", i);
 		x = i;
 		i = j;
 		j += x;
 		count++;
 	}
-	printf("%lu\n", i);
+	printf("%.0Lf\n", i);
 	return (0);
 }
