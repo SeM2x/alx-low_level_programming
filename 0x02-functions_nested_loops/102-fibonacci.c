@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long long int i, j, x;
+	long int i, j, x;
 	int count;
 
 	count = 0;
@@ -16,12 +16,12 @@ int main(void)
 	j = 2;
 	while (count < 49)
 	{
-		printf("%lld, ", i);
+		printf("%ld, ", i);
 		x = i;
 		i = j;
 		j += x;
 		count++;
 	}
-	printf("%lld\n", i);
+	printf("%ld\n", i);
 	return (0);
 }
