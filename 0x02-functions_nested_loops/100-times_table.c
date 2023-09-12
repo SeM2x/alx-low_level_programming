@@ -20,7 +20,7 @@ void print_times_table(int n)
 			{
 				if (j > 0)
 				{
-					if (j < n)
+					if (j < n + 1)
 						printf(",");
 					if (i * j < 10)
 						printf(" ");
