@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphebet - prints lowecase alphabet
+ * print_alphabet - prints lowecase alphabet
  *
  * Return: none
 */
