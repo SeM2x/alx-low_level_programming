@@ -32,7 +32,7 @@ int is_prime(long int num)
 /**
  *prime_factors - puts the prime factors of a given number in the give n array
  *@n: the given number
- * @factors[]: the given array
+ * @factors: the given array
  *
  *Return: the length of the array
  */
