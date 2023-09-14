@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints the largest factor of 
+ * main - prints the largest factor of
  *
  * Return: 1
 */
