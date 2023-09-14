@@ -27,7 +27,7 @@ int _pow(int l)
 
 void print_number(int n)
 {
-	int c, length, m, i;
+	int length, m, i;
 
 	length = 0;
 
