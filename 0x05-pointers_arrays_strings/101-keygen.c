@@ -41,11 +41,10 @@ char getRandomChar(void)
 
 int main(void)
 {
-	srand(time(NULL));
-
 	int i, currSum, remSum;
 	char pwd[50], c;
 
+	srand(time(NULL));
 	currSum = 0;
 	i = 0;
 	while (currSum < 2772)
