@@ -20,16 +20,12 @@ char getRandomChar(void)
 	{
 		case 0:
 			return (lower);
-			break;
 		case 1:
 			return (upper);
-			break;
 		case 2:
 			return (digit);
-			break;
 		default:
 			return (-1);
-			break;
 	}
 }
 
@@ -42,7 +38,7 @@ char getRandomChar(void)
 int main(void)
 {
 	int i, currSum, remSum;
-	char pwd[50], c;
+	char pwd[50];
 
 	srand(time(NULL));
 	currSum = 0;
@@ -57,9 +53,8 @@ int main(void)
 		}
 		else
 		{
-			c = getRandomChar();
-			pwd[i] = c;
-			currSum += c;
+			pwd[i] = getRandomChar();
+			currSum += pwd[i];
 		}
 
 		i++;
