@@ -22,26 +22,30 @@ int _strlen(char *s)
 }
 
 /**
- * rev_string - reverses a string
- * @s: the string to reverse
+ *rev_string - reverses a string
+ *@s: the string to reverse
  *
- * Return: void
-*/
+ *Return: void
+ */
 
 void rev_string(char *s)
 {
-        char *tmp;
-        int i, j;
+	char tmp;
+	int i, j, length;
 
-        tmp = malloc(sizeof(char) * _strlen(s));
-        j = 0;
-        i = _strlen(s) - 1;
-        while (i >= 0)
-        {
-        	tmp[j] = s[i];
-        	i--;
-        	j++;
-        }
+	length = _strlen(s);
+	j = 0;
+	i = length - 1;
+	while (i > length / 2)
+	{
+		tmp = s[i];
+		s[i] = s[j];
+		s[j] = tmp;
 
-        s = tmp;
+		i--;
+		j++;
+	}
+
+	printf("%s\n", s);
+
 }
