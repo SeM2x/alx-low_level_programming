@@ -31,7 +31,7 @@ int _strlen(char *s)
 
 void rev_string(char *s)
 {
-        char *s, *tmp;
+        char *tmp;
         int i, j;
 
         tmp = malloc(sizeof(char) * _strlen(s));
