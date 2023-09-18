@@ -10,7 +10,7 @@
 
 char getRandomChar(void)
 {
-	int lower, upper, digit, random
+	int lower, upper, digit, random;
 
 	lower = 'a' + rand() % 26;
 	upper = 'A' + rand() % 26;
