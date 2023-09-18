@@ -10,10 +10,12 @@
 
 char getRandomChar(void)
 {
-	int lower = 'a' + rand() % 26;
-	int upper = 'A' + rand() % 26;
-	int digit = '0' + rand() % 10;
-	int random = rand() % 3;
+	int lower, upper, digit, random
+
+	lower = 'a' + rand() % 26;
+	upper = 'A' + rand() % 26;
+	digit = '0' + rand() % 10;
+	random = rand() % 3;
 	switch (random)
 	{
 		case 0:
@@ -42,7 +44,7 @@ int main(void)
 	srand(time(NULL));
 
 	int i, currSum, remSum;
-	char pwd[50];
+	char pwd[50], c;
 
 	currSum = 0;
 	i = 0;
@@ -56,7 +58,7 @@ int main(void)
 		}
 		else
 		{
-			char c = getRandomChar();
+			c = getRandomChar();
 			pwd[i] = c;
 			currSum += c;
 		}
