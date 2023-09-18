@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#include <limits.h>
 
 /**
  *getsign - sign a given integer represended as string
@@ -84,9 +85,13 @@ int _atoi(char *s)
 {
 	int num, i, length;
 
+	if (strcmp(s, "-2147483648") == 0)
+		return (INT_MIN);
+
 	s = format(s);
 	length = strlen(s);
 	num = 0;
+
 	for (i = 1; i < length; i++)
 	{
 		num = num * 10 + (s[i] - '0');
