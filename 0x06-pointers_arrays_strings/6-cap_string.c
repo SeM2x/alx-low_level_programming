@@ -32,9 +32,12 @@ int is_separator(char c)
 
 char *cap_string(char *s)
 {
-	int i;
+	int i = 0;
 	int diff = 'a' - 'A';
-
+	
+	if (s[i] >= 'a' && s[i] <= 'z')
+		s[i] -= diff;
+	
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (is_separator(s[i]))
