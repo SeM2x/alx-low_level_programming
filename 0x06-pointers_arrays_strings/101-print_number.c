@@ -1,36 +1,63 @@
 #include "main.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 /**
- *print_number_rec -  prints a positive integer.
- *@n: integer
+ * _pow - calculates 10 to the power of a given number
+ * @l: the given number
  *
- *Return: void.
+ * Return: 10 ^ l
  */
 
-void print_number_rec(int n)
+int _pow(int l)
 {
-	if (n < 10)
-	{
-		_putchar(n + '0');
-	}
-	else
-	{
-		print_number(n / 10);
-		print_number(n % 10);
-	}
+	int i, res;
+
+	res = 1;
+	for (i = 0; i < l; i++)
+		res = res * 10;
+
+	return (res);
 }
 
 /**
- *print_number -  prints an integer.
- *@n: integer
+ * print_number - prints a number
+ * @n: the given number
  *
- *Return: void.
+ * Return: void
  */
 
 void print_number(int n)
 {
-	if (n < 0)
-		print_number_rec(-n);
+	int length, m, i;
+
+	length = 0;
+
+	if (n == 0)
+	{
+		_putchar('0');
+	}
 	else
-		print_number_rec(n);
+	{
+		if (n < 0)
+		{
+			n = -1 * n;
+			_putchar('-');
+		}
+
+		m = n;
+
+		while (m > 0)
+		{
+			m = m / 10;
+			length++;
+		}
+
+		for (i = length - 1; i >= 0; i--)
+		{
+			_putchar((n / _pow(i)) % 10 + '0');
+		}
+	}
 }
