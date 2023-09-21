@@ -34,10 +34,10 @@ char *cap_string(char *s)
 {
 	int i;
 	int diff = 'a' - 'A';
-	
+
 	if (s[0] >= 'a' && s[0] <= 'z')
 		s[0] -= diff;
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (is_separator(s[i]))
