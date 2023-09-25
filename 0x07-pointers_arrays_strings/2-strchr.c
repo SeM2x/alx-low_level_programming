@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- *_memcpy -   locates a character in a string
+ *_strchr -   locates a character in a string
  *@s: the string to locate a char
  *@c: the char to locate
  *
@@ -19,6 +19,7 @@ char *_strchr(char *s, char c)
 			return (p);
 		p++;
 	}
-
+	if (c == "")
+		return (s);
 	return (NULL);
 }
