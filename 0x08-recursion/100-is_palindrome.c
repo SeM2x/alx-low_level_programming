@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 {
 	char *str
 		;
-	str = (char *)malloc(length + 1);
+	str = (char *)malloc(strlen(s) + 1);
 	strcpy(str, s);
 	if (strlen(str) <= 1)
 		return (1);
