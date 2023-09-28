@@ -12,6 +12,9 @@
 
 int wildcmp(char *s1, char *s2)
 {
+	char *c;
+
+	c = (char *)malloc(strlen(s1) + 1);
 	if (*s2 == '*')
 	{
 		if (*(s2 + 1) == '*')
@@ -20,7 +23,7 @@ int wildcmp(char *s1, char *s2)
 		if (*(s2 + 1) != *s1)
 			return (wildcmp(s1 + 1, s2));
 
-		char *c = strrchr(s1, *(s2 + 1));
+		*c = strrchr(s1, *(s2 + 1));
 
 		if (c)
 		{
