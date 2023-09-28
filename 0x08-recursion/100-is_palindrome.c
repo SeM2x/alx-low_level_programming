@@ -10,8 +10,9 @@
 
 int is_palindrome(char *s)
 {
-	char str[strlen(s) + 1];
-
+	char *str
+		;
+	str = (char *)malloc(length + 1);
 	strcpy(str, s);
 	if (strlen(str) <= 1)
 		return (1);
