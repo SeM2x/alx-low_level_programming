@@ -14,7 +14,7 @@ char **strtow(char *str)
 	char **arr;
 	int i, j, size_arr, size_word;
 
-	if (!str)
+	if (str == NULL || !strcmp("", str))
 		return (NULL);
 	size_arr = 0;
 	for (i = 0; str[i] != '\0'; i++)
