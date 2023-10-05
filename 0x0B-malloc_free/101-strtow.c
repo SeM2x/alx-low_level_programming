@@ -13,8 +13,15 @@ char **strtow(char *str)
 {
 	char **arr;
 	int i, j, size_arr, size_word;
+	int is_empty;
 
-	if (str == NULL || !strcmp("", str) || !strcmp(" ", str))
+	is_empty = 1;
+	for(i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] > ' ')
+			is_empty = 1;
+	}
+	if (str == NULL || !strcmp("", str) || is_empty)
 		return (NULL);
 	size_arr = 0;
 	for (i = 0; str[i] != '\0'; i++)
