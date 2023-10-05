@@ -16,7 +16,7 @@ char **strtow(char *str)
 	int is_empty;
 
 	is_empty = 1;
-	for(i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] > ' ')
 			is_empty = 0;
@@ -29,11 +29,9 @@ char **strtow(char *str)
 		if (str[i] != ' ' && str[i + 1] <= ' ')
 			size_arr++;
 	}
-
 	arr = malloc((size_arr + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-
 	i = 0;
 	while (*str != '\0')
 	{
@@ -49,10 +47,8 @@ char **strtow(char *str)
 			arr[i][size_word] = '\0';
 			i++;
 		}
-
 		str++;
 	}
-
 	arr[i] = (NULL);
 	return (arr);
 }
