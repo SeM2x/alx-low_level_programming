@@ -19,9 +19,9 @@ char **strtow(char *str)
 	for(i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] > ' ')
-			is_empty = 1;
+			is_empty = 0;
 	}
-	if (str == NULL || !strcmp("", str) || is_empty)
+	if (str == NULL || is_empty)
 		return (NULL);
 	size_arr = 0;
 	for (i = 0; str[i] != '\0'; i++)
