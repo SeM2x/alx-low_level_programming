@@ -59,7 +59,7 @@ char *mul(char *a, char *b)
 
 	reverse_string(product);
 	product[productIndex] = '\0';
-	product = realloc(product, strlen(product));
+
 	return (product);
 }
 
@@ -95,14 +95,14 @@ int main(int argc, char *argv[])
 	if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 	{
 		printf("Error\n");
-		return(98);
+		exit(98);
 	}
 
 	res = mul(argv[1], argv[2]);
 	if (!res)
 	{
 		printf("Error\n");
-		return(98);
+		exit(98);
 	}
 	printf("%s\n", res);
 	return (0);
