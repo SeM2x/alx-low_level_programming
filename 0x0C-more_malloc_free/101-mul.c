@@ -42,6 +42,8 @@ char *mul(char *a, char *b)
 
 	m = strlen(a) - 1, n = strlen(b) - 1, carry = 0;
 	product = malloc(strlen(a) * strlen(b));
+	if (product == NULL)
+		return (NULL);
 	productIndex = 0;
 
 	for (i = 0; i <= m + n || carry; ++i)
@@ -93,10 +95,15 @@ int main(int argc, char *argv[])
 	if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 	{
 		printf("Error\n");
-		exit(98);
+		return(98);
 	}
 
 	res = mul(argv[1], argv[2]);
+	if (!res)
+	{
+		printf("Error\n");
+		return(98);
+	}
 	printf("%s\n", res);
 	return (0);
 }
