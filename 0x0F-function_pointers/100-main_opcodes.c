@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		printf("%02x", *ptr);
 		if (ptr < main_end - 1)
 			printf(" ");
-	}	
+	}
 	printf("\n");
 
 	return (0);
