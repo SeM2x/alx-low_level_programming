@@ -6,7 +6,7 @@
  * new_dog - creates a new dog.
  * @name: name
  * @age: age
- * @owner: ownwe
+ * @owner: owner
  *
  * Return: a pointer to the new allocated memory or NULL;
 */
