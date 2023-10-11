@@ -35,8 +35,10 @@ int main(int argc, char *argv[])
 
 	for (ptr = main_begin; ptr < main_end; ptr++)
 	{
-		printf("%02x ", *ptr);
-	}
+		printf("%02x", *ptr);
+		if (ptr < main_end - 1)
+			printf(" ");
+	}	
 	printf("\n");
 
 	return (0);
