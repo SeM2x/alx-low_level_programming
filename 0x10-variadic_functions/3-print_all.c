@@ -13,10 +13,12 @@ void print_all(const char *const format, ...)
 {
 	va_list args;
 	char str[3], *_format, *arg;
+	int i;
 
 	str[0] = '%';
 	str[2] = '\0';
-	_format = format;
+	_format = strdup(format);
+	i = 0;
 	va_start(args, format);
 	while (*_format != '\0')
 	{
@@ -27,12 +29,13 @@ void print_all(const char *const format, ...)
 		{
 			arg = va_arg(args, char *);
 			str[1] = *_format;
-			if (_format != format)
+			if (i)
 				printf(", ");
 			if (arg == NULL)
 				arg = strdup("(nil)");
 
 			printf(str, arg);
+			i++;
 			break;
 		}
 
