@@ -1,4 +1,4 @@
-#inlcude "lists.h"
+#include "lists.h"
 
 /**
  *print_list - prints all the elements of a list_t list.
@@ -17,4 +17,5 @@ size_t print_list(const list_t *h)
 			printf("[%u] %s\n", h->len, h->str);
 		return (print_list(h->next) + 1);
 	}
+	return (0);
 }
