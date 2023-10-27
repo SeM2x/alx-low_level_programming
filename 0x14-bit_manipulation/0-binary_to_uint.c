@@ -1,22 +1,23 @@
 #include "main.h"
 
 /**
- *all_digits - check if b is correct
- *@b: binary number
+ *Pow - calculates X to the power of Y.
+ *@X: x
+ *@Y: y
  *
- *Return: 1 if correct 0 otherwise.
+ *Return: X ^ Y.
  */
-int all_digits(char *b)
+int Pow(int X, int Y)
 {
-	if (!b)
-		return (0);
-	for (; *b != '\0'; b++)
+	int power = 1, i;
+
+	for (i = 1; i <= Y; ++i)
 	{
-		if (*b != '0' && *b != '1')
-			return (0);
+		power = power * X;
 	}
 
-	return (1);
+	return (power);
+
 }
 
 /**
@@ -27,11 +28,18 @@ int all_digits(char *b)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	if (!all_digits(b))
+	unsigned int n;
+	int i;
+
+	if (!b)
 		return (0);
+	n = 0;
+	for (i = 0; i < (int) strlen(b); i++)
+	{
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
+		n += (b[i] - '0') * Pow(2, strlen(b) - i - 1);
+	}
 
-	if (strlen(b) == 1)
-		return (atoi(b));
-
-	return ((*b - '0') *pow(2, strlen(b) - 1) + binary_to_uint(++b));
+	return (n);
 }
