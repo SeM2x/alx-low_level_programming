@@ -8,8 +8,8 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bit_count = sizeof(unsigned long int) * 8;
-	unsigned int mask;
+	int bit_count = 64;
+	unsigned long int mask;
 	int i, print;
 
 	print = 0;
