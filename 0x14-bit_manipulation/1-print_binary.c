@@ -9,7 +9,7 @@
 void print_binary(unsigned long int n)
 {
 	int bit_count = 64;
-	unsigned int mask;
+	unsigned long int mask;
 	int i, print;
 
 	print = 0;
