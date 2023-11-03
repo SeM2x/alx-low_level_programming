@@ -6,14 +6,14 @@
  * @ffd: file from definer
  * @ftd: file to definer
  * @b: buffer
- * av: argv
+ * @av: argv
  *
  * Return - Void.
 */
 void cpy_data(char **av, int ffd, int ftd, char *b)
 {
 	int sz;
-	
+
 	sz = 0;
 	do {
 		sz = read(ffd, b, 1024);
@@ -22,7 +22,7 @@ void cpy_data(char **av, int ffd, int ftd, char *b)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
-	
+
 		if (sz > 0 && write(ftd, b, strlen(b)) < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
@@ -52,6 +52,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
+	ftd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
 	if (ftd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
