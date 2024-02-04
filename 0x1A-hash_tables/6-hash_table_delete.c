@@ -6,10 +6,11 @@ void free_list(hash_node_t *node)
 	if (node)
 	{
 		free_list(node->next);
-		free(node->key);
-		free(node->value);
-		if (node->next)
-			free(node->next);
+		if (node->key)
+			free(node->key);
+		if (node->value)
+			free(node->value);
+		free(node);
 	}
 }
 
@@ -19,9 +20,16 @@ void hash_table_delete(hash_table_t *ht)
 
 	if (ht)
 	{
-		for (i = 0; i < ht->size; i++)
+		if (ht->array)
 		{
-			free_list(ht->array[i]);
+			for (i = 0; i < ht->size; i++)
+			{
+				if (hash_table->array[i])
+					free_list(ht->array[i]);
+			}
+			free(ht->array);
 		}
+		free(ht);
 	}
+
 }
