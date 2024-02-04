@@ -34,7 +34,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		if (ht->array[index])
+		{
+			free(ht->array[index]->key);
+			free(ht->array[index]->value);
 			free(ht->array[index]);
+			node->next = ht->array[index]->next;
+		}
 		ht->array[index] = node;
 	}
 
