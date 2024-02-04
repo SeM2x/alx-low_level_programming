@@ -1,6 +1,9 @@
 #include "hash_tables.h"
 
-
+/**
+ * free_list - frees a linked list.
+ * @node: the head of the list
+*/
 void free_list(hash_node_t *node)
 {
 	if (node)
@@ -14,6 +17,10 @@ void free_list(hash_node_t *node)
 	}
 }
 
+/**
+ * hash_table_delete - deletes a hash table.
+ * @ht: the hash table
+*/
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i;
