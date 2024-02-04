@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 
-void free_node(hash_node_t node)
+void free_node(hash_node_t *node)
 {
 	if (node)
 	{
@@ -18,8 +18,7 @@ void hash_table_delete(hash_table_t *ht)
 	{
 		for (i = 0; i < ht->size; i++)
 		{
-			node = ht->array[i];
-			free_node(node);
+			free_node(ht->array[i]);
 		}
 	}
 }
