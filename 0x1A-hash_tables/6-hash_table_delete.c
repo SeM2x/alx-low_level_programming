@@ -1,12 +1,15 @@
 #include "hash_tables.h"
 
 
-void free_node(hash_node_t *node)
+void free_list(hash_node_t *node)
 {
 	if (node)
 	{
-		free_node(node->next);
-		free(node);
+		free_list(node->next);
+		free(node->key);
+		free(node->value);
+		if (node->next)
+			free(node->next);
 	}
 }
 
@@ -18,7 +21,7 @@ void hash_table_delete(hash_table_t *ht)
 	{
 		for (i = 0; i < ht->size; i++)
 		{
-			free_node(ht->array[i]);
+			free_list(ht->array[i]);
 		}
 	}
 }
