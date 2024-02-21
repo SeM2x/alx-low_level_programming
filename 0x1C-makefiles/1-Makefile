@@ -1,0 +1,7 @@
+CC = gcc
+SRC = .c
+
+all: generate
+
+generate:
+	${CC} main.c school${SRC} -o school
