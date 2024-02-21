@@ -1,4 +1,4 @@
-#!/use/bin/python3
+#!/usr/bin/python3
 """Calculate the perimeter of an island represented by a grid."""
 
 
