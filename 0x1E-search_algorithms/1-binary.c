@@ -57,7 +57,6 @@ int binary_search(int *array, size_t size, int value)
 	print_array(array, m, 0);
 	while (l <= r)
 	{
-
 		m = (l + r) / 2;
 		if (array[m] < value)
 		{
