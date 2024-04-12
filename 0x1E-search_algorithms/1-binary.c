@@ -4,34 +4,24 @@
  * print_array - prints an array
  *
  * @array: a pointer to the first element of the array to search in
- * @m: start index if r != 0, end index otherwise
- * @r: end index or 0
+ * @s: start index
+ * @e: end index
  */
-void print_array(int *array, int m, int r)
+void print_array(int *array, int s, int e)
 {
 	int i;
 
-	if (m != r)
+	if (s != e)
 	{
 		printf("Searching in array: ");
-		if (r)
+
+		for (i = s; i < e; i++)
 		{
-			for (i = m + 1; i < r + 1; i++)
-			{
-				printf("%d", array[i]);
-				if (i != r)
-					printf(", ");
-			}
+			printf("%d", array[i]);
+			if (i != e - 1)
+				printf(", ");
 		}
-		else
-		{
-			for (i = 0; i < m; i++)
-			{
-				printf("%d", array[i]);
-				if (i != m - 1)
-					printf(", ");
-			}
-		}
+
 		printf("\n");
 	}
 }
@@ -54,18 +44,18 @@ int binary_search(int *array, size_t size, int value)
 		return (-1);
 
 	m = size;
-	print_array(array, m, 0);
+	print_array(array, 0, size);
 	while (l <= r)
 	{
 		m = (l + r) / 2;
 		if (array[m] < value)
 		{
-			print_array(array, m, r);
+			print_array(array, m + 1, r + 1);
 			l = m + 1;
 		}
 		else if (array[m] > value)
 		{
-			print_array(array, m, 0);
+			print_array(array, l, m);
 			r = m - 1;
 		}
 		else
